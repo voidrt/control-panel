@@ -1,4 +1,4 @@
-import 'package:control_panel_flutter/screens/tela_do_joao/widgets/form_field.dart';
+import 'package:control_panel_flutter/screens/gestock_control_panel/widgets/form_field.dart';
 import 'package:control_panel_flutter/themes/paddings.dart';
 import 'package:flutter/material.dart';
 

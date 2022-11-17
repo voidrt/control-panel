@@ -1,4 +1,4 @@
-import 'package:control_panel_flutter/screens/tela_do_joao/widgets/control_panel.dart';
+import 'package:control_panel_flutter/screens/gestock_control_panel/widgets/control_panel.dart';
 import 'package:flutter/material.dart';
 
 class NavRoutes {
