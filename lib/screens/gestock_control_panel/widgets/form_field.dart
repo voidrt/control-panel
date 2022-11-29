@@ -23,7 +23,7 @@ class ControlPanelFormFieldState extends ConsumerState<ControlPanelFormField> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: widget.constraints.maxWidth * 0.25,
+      width: widget.constraints.maxWidth * 0.23,
       margin: const EdgeInsets.symmetric(
         vertical: PaddingMeasure.pp,
         horizontal: PaddingMeasure.m,

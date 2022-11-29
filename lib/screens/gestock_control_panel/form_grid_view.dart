@@ -1,9 +1,9 @@
 import 'package:control_panel_flutter/screens/gestock_control_panel/widgets/form_field.dart';
-import 'package:control_panel_flutter/themes/paddings.dart';
 import 'package:flutter/material.dart';
+import 'package:control_panel_flutter/themes/paddings.dart';
 
-class FormFieldGridView extends StatelessWidget {
-  const FormFieldGridView({
+class FormFieldGrid extends StatelessWidget {
+  const FormFieldGrid({
     Key? key,
     required this.constraints,
     required this.formFieldLabels,
@@ -15,15 +15,13 @@ class FormFieldGridView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GridView.builder(
-      gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
-        maxCrossAxisExtent: constraints.maxWidth * 0.4,
+      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+        crossAxisCount: 3,
         childAspectRatio: 9 / 2,
-        mainAxisSpacing: PaddingMeasure.pp,
-        crossAxisSpacing: PaddingMeasure.pp,
+        crossAxisSpacing: PaddingMeasure.defaultSize,
       ),
-      itemCount: formFieldLabels.length,
       itemBuilder: (context, index) {
-        final formLabel = formFieldLabels[index];
+        String formLabel = formFieldLabels[index];
         return ControlPanelFormField(
           formFieldText: formLabel,
           constraints: constraints,

@@ -9,13 +9,17 @@ class ProductScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: ColorPalette.darkGrey400,
-      body: Column(
-        children: [
-          const ControlPanel(),
-          ProductList(),
-        ],
-      ),
+      backgroundColor: ColorPalette.background,
+      body: LayoutBuilder(builder: (context, constraints) {
+        return Column(
+          children: [
+            ControlPanel(
+              constraints: constraints,
+            ),
+            ProductList(),
+          ],
+        );
+      }),
     );
   }
 }
