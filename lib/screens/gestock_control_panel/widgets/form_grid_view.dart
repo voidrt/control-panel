@@ -20,6 +20,7 @@ class FormFieldGrid extends StatelessWidget {
         childAspectRatio: 9 / 2,
         crossAxisSpacing: PaddingMeasure.defaultSize,
       ),
+      itemCount: formFieldLabels.length,
       itemBuilder: (context, index) {
         String formLabel = formFieldLabels[index];
         return ControlPanelFormField(

@@ -1,10 +1,10 @@
 import 'package:control_panel_flutter/screens/gestock_control_panel/widgets/control_panel.dart';
-import 'package:control_panel_flutter/screens/gestock_product_list/product_list.dart';
+import 'package:control_panel_flutter/screens/gestock_product_list/pl_screen.dart';
 import 'package:control_panel_flutter/themes/colors.dart';
 import 'package:flutter/material.dart';
 
-class ProductScreen extends StatelessWidget {
-  const ProductScreen({Key? key}) : super(key: key);
+class GeStockScreen extends StatelessWidget {
+  const GeStockScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +16,9 @@ class ProductScreen extends StatelessWidget {
             ControlPanel(
               constraints: constraints,
             ),
-            ProductList(),
+            ProductListScreen(
+              constraints: constraints,
+            ),
           ],
         );
       }),

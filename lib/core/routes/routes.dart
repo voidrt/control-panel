@@ -5,6 +5,6 @@ class NavRoutes {
   static const controlPanel = '/';
 
   static Map<String, Widget Function(BuildContext)> materialRoutes = {
-    controlPanel: (ctx) => const ProductScreen(),
+    controlPanel: (ctx) => const GeStockScreen(),
   };
 }

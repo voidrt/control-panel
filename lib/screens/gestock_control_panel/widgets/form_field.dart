@@ -38,20 +38,20 @@ class ControlPanelFormFieldState extends ConsumerState<ControlPanelFormField> {
               style: Theme.of(context)
                   .textTheme
                   .subtitle2!
-                  .copyWith(color: ColorPalette.grey50),
+                  .copyWith(color: ColorPalette.darkGrey400),
             ),
           ),
           TextField(
-            cursorColor: ColorPalette.grey50,
+            cursorColor: ColorPalette.darkGrey400,
             controller: _formFieldController,
             cursorWidth: 1,
             style: Theme.of(context)
                 .textTheme
                 .subtitle2!
-                .copyWith(color: ColorPalette.grey50),
+                .copyWith(color: ColorPalette.darkGrey400),
             decoration: InputDecoration(
               filled: true,
-              fillColor: ColorPalette.darkGrey800,
+              fillColor: ColorPalette.darkGrey50,
               errorBorder: OutlineInputBorder(
                 borderSide: const BorderSide(
                   color: ColorPalette.primaryDark,

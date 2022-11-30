@@ -1,15 +1,15 @@
 class Product {
-  DateTime? date;
-  String? codigoBarra;
-  String? codigoRef;
-  double? comprimento;
-  double? largura;
+  final DateTime? date;
+  final String? codigoBarra;
+  final String? codigoRef;
+  final double? comprimento;
+  final double? largura;
 
   Product({
     required this.codigoBarra,
-    required this.largura,
-    this.codigoRef,
-    this.comprimento,
     this.date,
+    this.largura = 1,
+    this.codigoRef = '000',
+    this.comprimento = 1,
   });
 }
