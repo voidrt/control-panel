@@ -12,10 +12,12 @@ class ProductListScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return OutlinedTextContainer(
-      constraints: constraints,
-      text: 'Lista de Produtos',
-      child: ProductList(),
+    return Flexible(
+      child: OutlinedTextContainer(
+        constraints: constraints,
+        text: 'Lista de Produtos',
+        child: const ProductList(),
+      ),
     );
   }
 }

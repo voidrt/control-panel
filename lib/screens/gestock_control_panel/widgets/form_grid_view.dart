@@ -14,20 +14,24 @@ class FormFieldGrid extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GridView.builder(
-      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-        crossAxisCount: 3,
-        childAspectRatio: 9 / 2,
-        crossAxisSpacing: PaddingMeasure.defaultSize,
+    return Padding(
+      padding: const EdgeInsets.only(top: PaddingMeasure.m),
+      child: GridView.builder(
+        gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
+          maxCrossAxisExtent: constraints.maxWidth * 0.4,
+          childAspectRatio: 9 / 2,
+          crossAxisSpacing: PaddingMeasure.defaultSize,
+          mainAxisExtent: constraints.maxHeight * 0.2,
+        ),
+        itemCount: formFieldLabels.length,
+        itemBuilder: (context, index) {
+          String formLabel = formFieldLabels[index];
+          return ControlPanelFormField(
+            formFieldText: formLabel,
+            constraints: constraints,
+          );
+        },
       ),
-      itemCount: formFieldLabels.length,
-      itemBuilder: (context, index) {
-        String formLabel = formFieldLabels[index];
-        return ControlPanelFormField(
-          formFieldText: formLabel,
-          constraints: constraints,
-        );
-      },
     );
   }
 }

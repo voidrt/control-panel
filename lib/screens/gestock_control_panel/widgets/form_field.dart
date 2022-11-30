@@ -51,7 +51,7 @@ class ControlPanelFormFieldState extends ConsumerState<ControlPanelFormField> {
                 .copyWith(color: ColorPalette.darkGrey400),
             decoration: InputDecoration(
               filled: true,
-              fillColor: ColorPalette.darkGrey50,
+              fillColor: ColorPalette.grey50,
               errorBorder: OutlineInputBorder(
                 borderSide: const BorderSide(
                   color: ColorPalette.primaryDark,

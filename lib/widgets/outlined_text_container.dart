@@ -23,7 +23,7 @@ class OutlinedTextContainer extends StatelessWidget {
           width: constraints.maxWidth,
           decoration: BoxDecoration(
             border: Border.all(
-              width: 1.5,
+              width: 1,
               color: ColorPalette.darkGrey50,
             ),
           ),
@@ -45,7 +45,7 @@ class OutlinedTextContainer extends StatelessWidget {
               ' $text ',
               style: Theme.of(context)
                   .textTheme
-                  .bodyText1!
+                  .bodyText2!
                   .copyWith(color: ColorPalette.darkGrey50),
             ),
           ),
