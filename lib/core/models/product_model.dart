@@ -1,5 +1,5 @@
 class Product {
-  final DateTime? date;
+  final DateTime? data;
   final String? codigoBarra;
   final String? codigoRef;
   final double? comprimento;
@@ -7,7 +7,7 @@ class Product {
 
   Product({
     required this.codigoBarra,
-    this.date,
+    this.data,
     this.largura = 1,
     this.codigoRef = '000',
     this.comprimento = 1,

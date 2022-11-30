@@ -19,21 +19,21 @@ class ProductList extends StatelessWidget {
       codigoBarra: "AB1",
       codigoRef: '001',
       comprimento: 20.0,
-      date: DateTime.now(),
+      data: DateTime.now(),
     ),
     Product(
       largura: 13.0,
       codigoBarra: "AB2",
       codigoRef: '002',
       comprimento: 20.0,
-      date: DateTime.now(),
+      data: DateTime.now(),
     ),
     Product(
       largura: 14.0,
       codigoBarra: "AB3",
       codigoRef: '003',
       comprimento: 20.0,
-      date: DateTime.now(),
+      data: DateTime.now(),
     ),
   ];
 
@@ -50,103 +50,7 @@ class ProductList extends StatelessWidget {
                 for (int i = 0; i < mockProperties.length; ++i)
                   _buildDataColumn(mockProperties[i]),
               ],
-              rows: const [
-                DataRow(
-                  cells: [
-                    DataCell(
-                      Text('data'),
-                    ),
-                    DataCell(
-                      Text('more data'),
-                    ),
-                    DataCell(
-                      Text('even more data'),
-                    ),
-                    DataCell(
-                      Text('caralhada'),
-                    ),
-                    DataCell(
-                      Text('caralhada'),
-                    ),
-                  ],
-                ),
-                DataRow(
-                  cells: [
-                    DataCell(
-                      Text('data'),
-                    ),
-                    DataCell(
-                      Text('more data'),
-                    ),
-                    DataCell(
-                      Text('even more data'),
-                    ),
-                    DataCell(
-                      Text('caralhada'),
-                    ),
-                    DataCell(
-                      Text('caralhada'),
-                    ),
-                  ],
-                ),
-                DataRow(
-                  cells: [
-                    DataCell(
-                      Text('data'),
-                    ),
-                    DataCell(
-                      Text('more data'),
-                    ),
-                    DataCell(
-                      Text('even more data'),
-                    ),
-                    DataCell(
-                      Text('caralhada'),
-                    ),
-                    DataCell(
-                      Text('caralhada'),
-                    ),
-                  ],
-                ),
-                DataRow(
-                  cells: [
-                    DataCell(
-                      Text('data'),
-                    ),
-                    DataCell(
-                      Text('more data'),
-                    ),
-                    DataCell(
-                      Text('even more data'),
-                    ),
-                    DataCell(
-                      Text('caralhada'),
-                    ),
-                    DataCell(
-                      Text('caralhada'),
-                    ),
-                  ],
-                ),
-                DataRow(
-                  cells: [
-                    DataCell(
-                      Text('data'),
-                    ),
-                    DataCell(
-                      Text('more data'),
-                    ),
-                    DataCell(
-                      Text('even more data'),
-                    ),
-                    DataCell(
-                      Text('caralhada'),
-                    ),
-                    DataCell(
-                      Text('caralhada'),
-                    ),
-                  ],
-                ),
-              ],
+              rows: _buildDataRows(),
             ),
           ),
         ],
@@ -156,5 +60,39 @@ class ProductList extends StatelessWidget {
 
   DataColumn _buildDataColumn(String property) {
     return DataColumn(label: Text(property));
+  }
+
+  List<DataRow> _buildDataRows() {
+    return products
+        .map(
+          (product) => DataRow(
+            cells: [
+              DataCell(
+                Text('${product.codigoBarra}'),
+              ),
+              DataCell(
+                Text(
+                  '${product.codigoRef}',
+                ),
+              ),
+              DataCell(
+                Text(
+                  '${product.comprimento}',
+                ),
+              ),
+              DataCell(
+                Text(
+                  '${product.largura}',
+                ),
+              ),
+              DataCell(
+                Text(
+                  '${product.data}',
+                ),
+              ),
+            ],
+          ),
+        )
+        .toList();
   }
 }
