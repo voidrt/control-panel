@@ -1,18 +1,21 @@
 import 'package:control_panel_flutter/core/models/product_model.dart';
+import 'package:control_panel_flutter/core/providers/product_provider.dart';
 import 'package:control_panel_flutter/themes/colors.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-class ProductsDataTable extends StatelessWidget {
+class ProductsDataTable extends ConsumerWidget {
   const ProductsDataTable({Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    final products = ref.watch(productProvider);
     return DataTable(
       columns: [
         for (int i = 0; i < mockProperties.length; ++i)
           _buildDataColumn(mockProperties[i]),
       ],
-      rows: _buildDataRows(),
+      rows: _buildDataRows(products),
       headingTextStyle: Theme.of(context).textTheme.bodyText2,
       dataTextStyle: Theme.of(context).textTheme.subtitle2!.copyWith(
             color: ColorPalette.grey200,
@@ -24,7 +27,7 @@ class ProductsDataTable extends StatelessWidget {
     return DataColumn(label: Text(property));
   }
 
-  List<DataRow> _buildDataRows() {
+  List<DataRow> _buildDataRows(List<Product> products) {
     return products
         .map(
           (product) => DataRow(
@@ -65,42 +68,4 @@ final mockProperties = [
   'Comprimento',
   'Largura',
   'Data',
-];
-
-final List<Product> products = [
-  Product(
-    largura: 10.0,
-    codigoBarra: "AB1",
-    codigoRef: '001',
-    comprimento: 20.0,
-    data: DateTime.now(),
-  ),
-  Product(
-    largura: 13.0,
-    codigoBarra: "AB2",
-    codigoRef: '002',
-    comprimento: 20.0,
-    data: DateTime.now(),
-  ),
-  Product(
-    largura: 14.0,
-    codigoBarra: "AB3",
-    codigoRef: '003',
-    comprimento: 20.0,
-    data: DateTime.now(),
-  ),
-  Product(
-    largura: 14.0,
-    codigoBarra: "AB4",
-    codigoRef: '003',
-    comprimento: 20.0,
-    data: DateTime.now(),
-  ),
-  Product(
-    largura: 14.0,
-    codigoBarra: "AB5",
-    codigoRef: '003',
-    comprimento: 20.0,
-    data: DateTime.now(),
-  ),
 ];
